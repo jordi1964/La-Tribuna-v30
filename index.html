@@ -1,4 +1,4 @@
-<!-- Projecte LA TRIBUNA v25 -->
+<!-- Projecte LA TRIBUNA v30 -->
 
 <!-- Millora: marc textos parallax -->
 <!-- Millora: slideshow automàtic funcionant correctament -->
@@ -11,7 +11,14 @@
 <!-- Millora: incorporació dels 4 videos de Youtube --><!-- engrandiment botó menú -->
 <!-- Millora: responsive -->
 <!-- Millora: incorporació esdeveniments dispositius tàctils: dropdown dissenyat per Kate Morley -->
-<!-- Millora: engrandir botons x esdeveniments tàctils; conversió de tots els menus a touch-friendly -->
+<!-- Millora: engrandir botons x esdeveniments tàctils; conversió dels menus a touch-friendly (prova simulació link INFO amb JavaScript function goInfo) -->
+<!-- Millora Touch-Friendly: duplicació barra bar-laptop, la segona tàctil, que activaré via CSS @media (hover: hover) -->
+<!-- Millora: NAVBAR x format laptop estàtica: elimino onclick="closeNav()" de bar-laptop; augmento padding superior seccions i tb de la classe .apartats-info-->
+<!-- Millora: botó x fitxa equip mòbil; icona fons parallax més clara; retoc text receptes x mòbil; canvi tipos que no es veien bé per formats petits -->
+<!-- Millora: supressió link a JS "dropdown" (sembla que no cal) -->
+<!-- Millora: barra que desapareix automàticament, només per format mòbil -->
+<!-- Millora: canvi peu finestra inicial i revisió tots els formats; modificació animació ampliar per foto Iyengar -->
+<!-- Millora: canvi animació més dinàmica -->
 
 
 <!doctype html>
@@ -24,14 +31,13 @@
 
   <link rel="stylesheet" href="css/normalize.css">
 
-  <link rel="stylesheet" href="css/estils25.css">
+  <link rel="stylesheet" href="css/estils30.css">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><!-- afegim AQUEST full estils de fontawesome per integrar les icones de xxss -->
 
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
 
-  <script src="js/script25.js"></script>
-  <script src="js/Dropdown.src.js"></script>
+  <script src="js/script30.js"></script>
 
 </head>
 
@@ -49,29 +55,52 @@
           </div>
 
           <ul id="bar-laptop" class="bar">
-            <li><a href="#iyengar" onclick="closeNav()">Ioga Iyengar</a></li>
-            <li><a href="#centres" onclick="closeNav()">Els centres</a>
+            <li><a href="#iyengar">Ioga Iyengar</a></li>
+            <li><a href="#centres">Els centres</a>
               <ul>
-                <li><a href="#historia" onclick="closeNav()">Història</a></li>
-                <li><a href="#pou" onclick="closeNav()">EL POU DE LLUM - Figueres</a></li>
-                <li><a href="#tribuna" onclick="closeNav()">LA TRIBUNA - Olot</a></li>
+                <li><a href="#historia">Història</a></li>
+                <li><a href="#pou">EL POU DE LLUM - Figueres</a></li>
+                <li><a href="#tribuna">LA TRIBUNA - Olot</a></li>
               </ul>
             </li>
-            <li><a href="#equip" onclick="closeNav()">Equip docent</a></li>
-            <!-- Link via JS: onmousedown + scrollIntoView. Cal canviar tag <a> per <p>, sinó scrollIntoView no va -->
-            <li><p onmouseup="goInfo(); closeNav()">Informació</p>
+            <li><a href="#equip">Equip docent</a></li>
+            <li><a href="#info">Informació</a>
               <ul>
-                <li><a href="#calendari" onclick="closeNav()">Calendari</a></li>
-                <li><a href="#horaris" onclick="closeNav()">Horaris</a></li>
-                <li><a href="#tarifes" onclick="closeNav()">Tarifes</a></li>
-                <li><a href="#consells" onclick="closeNav()">Consells pràctics</a></li>
-                <li><a href="#material" onclick="closeNav()">Material</a></li>
-                <li><a href="#bibliografia" onclick="closeNav()">Bibliografia</a></li>
+                <li><a href="#calendari">Calendari</a></li>
+                <li><a href="#horaris">Horaris</a></li>
+                <li><a href="#tarifes">Tarifes</a></li>
+                <li><a href="#consells">Consells pràctics</a></li>
+                <li><a href="#material">Material</a></li>
+                <li><a href="#bibliografia">Bibliografia</a></li>
               </ul>
             </li>
-            <li><a href="#faqs" onclick="closeNav()">FAQs</a></li>
-            <li><a href="#receptes" onclick="closeNav()">Receptes</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#receptes">Receptes</a></li>
           </ul><!-- #bar-laptop -->
+
+          <ul id="bar-nohover" class="bar">
+            <li><a href="#iyengar">Ioga Iyengar</a></li>
+            <li><a href="#">Els centres<i class="fas fa-caret-down"></i></a>
+              <ul>
+                <li><a href="#historia">Història</a></li>
+                <li><a href="#pou">EL POU DE LLUM - Figueres</a></li>
+                <li><a href="#tribuna">LA TRIBUNA - Olot</a></li>
+              </ul>
+            </li>
+            <li><a href="#equip">Equip docent</a></li>
+            <li><a href="#">Informació<i class="fas fa-caret-down"></i></a>
+              <ul>
+                <li><a href="#calendari">Calendari</a></li>
+                <li><a href="#horaris">Horaris</a></li>
+                <li><a href="#tarifes">Tarifes</a></li>
+                <li><a href="#consells">Consells pràctics</a></li>
+                <li><a href="#material">Material</a></li>
+                <li><a href="#bibliografia">Bibliografia</a></li>
+              </ul>
+            </li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#receptes">Receptes</a></li>
+          </ul><!-- #bar-nohover -->
 
           <ul class="xarxes">
             <li><a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -116,11 +145,11 @@
             <p>Centres de Ioga Iyengar · <span>El Pou de Llum · La Tribuna</span></p>
           </div>
 
-          <ul id="bar-mobil" class="bar dropdown"><!-- Classe "dropdown" permet activar arxiu Dropdown.src.js -->
+          <ul id="bar-mobil" class="bar"><!-- Classe "dropdown" permet activar arxiu Dropdown.src.js -->
             <li><a href="#iyengar" onclick="closeMobileNav()">Iyengar</a></li>
             <li><a href="#">Centres<i class="fas fa-caret-down"></i></a>
               <ul id="ul-centres">
-                <li><a href="#historia" onclick="closeNav()">Història</a></li>
+                <li><a href="#historia" onclick="closeMobileNav()">Història</a></li>
                 <li><a href="#pou" onclick="closeMobileNav()">EL POU DE LLUM - Figueres</a></li>
                 <li><a href="#tribuna" onclick="closeMobileNav()">LA TRIBUNA - Olot</a></li>
               </ul>
@@ -153,7 +182,7 @@
           </ul><!-- .bar-mobil -->
 
           <div class="closebtn">
-            <span onclick="closeNav()">&times;</span>
+            <span onclick="closeMobileNav()">&times;</span>
           </div>
 
         </div><!-- .grid-barra-flot -->
@@ -170,6 +199,9 @@
       <div class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
+        <div id="slide0" class="mySlides fade">
+        </div>
+
         <div id="slide1" class="mySlides fade">
         </div>
 
@@ -185,10 +217,19 @@
         <div id="slide5" class="mySlides fade">
         </div>
 
+        <div id="slide6" class="mySlides fade">
+        </div>
+
+        <div id="slide7" class="mySlides fade">
+        </div>
+
       </div><!-- Slideshow container -->
 
+      <!-- LOGO + CENTRES part inferior -->
       <div class="container-logo">
-        <div class="seus-logo">
+
+        <!-- Peu x ordinador i tablet -->
+        <div class="subcontainer-logo">
           <div class="seus seu1">
             <h2>El Pou de Llum</h2>
             <p>FIGUERES</p>
@@ -200,13 +241,29 @@
             <h2>La Tribuna</h2>
             <p>OLOT</p>
           </div>
-
           <div class="subtitol">
             <h5>Centres  de  Ioga  Iyengar</h5>
           </div>
-        </div>
+        </div><!-- .subcontainer-logo -->
 
-      </div><!-- logotip -->
+        <!-- Peu x mòbil -->
+        <div class="sub-logo-mobil">
+          <div class="seus-mobil">
+            <div class="seus seu1">
+              <h2>El Pou de Llum</h2>
+              <p>FIGUERES</p>
+            </div>
+            <div class="seus seu2">
+              <h2>La Tribuna</h2>
+              <p>OLOT</p>
+            </div>
+          </div><!-- .seus-mobil -->
+          <div class="subtitol">
+            <h5>Centres  de  Ioga  Iyengar</h5>
+          </div>
+        </div><!-- .sub-logo-mobil -->
+
+      </div><!-- LOGO + CENTRES -->
 
   </header>
 
@@ -252,17 +309,26 @@
         <p>I finalment equilibri de l'esperit aconseguint una pau interior per viure en harmonia amb nosaltres mateixos i amb el nostre entorn.</p>
       </div><!-- pretenem -->
 
-      <div id="img-iyengar-1">
+      <!-- Duplico atributs x versions hover o no-hover -->
+      <div id="img-iyengar-1" class="img-iyengar-laptop">
         <a href="https://aeyi.org/yoga-iyengar/el-maestro-bks-iyengar/" target="_blank">
+          <div class="amplibis">
+            <p>&#43;</p>
+          </div>
           <img src="img/Iyengar-1-sencer.jpg" alt="BKS Iyengar">
           <h5 class="requadre">B.K.S. IYENGAR</h5>
+          <h6 class="pastilla">B.K.S. Iyengar</h6>
         </a>
       </div>
 
-      <div id="img-iyengar-2">
+      <div id="img-iyengar-2" class="img-iyengar-laptop">
         <a href="https://aeyi.org/yoga-iyengar/el-maestro-bks-iyengar/" target="_blank">
           <img src="img/iyengar-2-sq.jpg" alt="BKS Iyengar">
           <h5 class="requadre">B.K.S. IYENGAR</h5>
+          <h6 class="pastilla">B.K.S. Iyengar</h6>
+          <div class="ampliar">
+            <p>&#43;</p>
+          </div>
         </a>
       </div>
 
@@ -280,7 +346,7 @@
             <p>&#43;</p>
           </div>
           <img src="img/iyengar-2-sq.jpg" alt="BKS Iyengar">
-          <h6 class="pastilla">BKS Iyengar</h6>
+          <h6 class="pastilla">B.K.S. Iyengar</h6>
         </a>
       </div>
 
@@ -290,7 +356,7 @@
             <p>&#43;</p>
           </div>
           <img src="img/Iyengar-1.jpg" alt="BKS Iyengar">
-          <h6 class="pastilla">BKS Iyengar</h6>
+          <h6 class="pastilla">B.K.S. Iyengar</h6>
         </a>
       </div>
     </div><!-- grid-container -->
@@ -363,7 +429,7 @@
     </div><!-- reticula grid-centres -->
 
     <div id="pou" class="pou">
-      <h4 class="requadre">CENTRE DE IOGA IYENGAR® EL POU DE LLUM - Figueres</h4>
+      <h4 class="requadre h4-centres">CENTRE DE IOGA IYENGAR® EL POU DE LLUM - Figueres</h4>
       <div class="grid-figueres">
         <div class="caracter-figueres">
           <h5>Característiques del Cente</h5>
@@ -407,7 +473,7 @@
     </div><!-- .pou -->
 
     <div id="tribuna" class="tribuna">
-      <h4 class="requadre">CENTRE DE IOGA IYENGAR® LA TRIBUNA - Olot</h4>
+      <h4 class="requadre h4-centres">CENTRE DE IOGA IYENGAR® LA TRIBUNA - Olot</h4>
       <div class="grid-olot">
         <div class="caracter-olot">
           <h5>Característiques del Cente</h5>
@@ -477,7 +543,7 @@
     </div>
 
     <div class="reticula grid-equip">
-      <div id="enric" class="equip" onclick="openEquip1(); closeNav()">
+      <div id="enric" class="equip" onclick="openEquip1()">
         <div class="equip-img">
           <div class="ampliar">
             <p>&#43;</p>
@@ -488,7 +554,7 @@
         </div>
       </div><!-- #enric -->
 
-      <div id="nuria" class="equip" onclick="openEquip2(); closeNav()">
+      <div id="nuria" class="equip" onclick="openEquip2()">
         <div class="equip-img">
           <div class="ampliar">
             <p>&#43;</p>
@@ -499,7 +565,7 @@
         </div>
       </div><!-- #nuria -->
 
-      <div id="marc" class="equip" onclick="openEquip3(); closeNav()">
+      <div id="marc" class="equip" onclick="openEquip3()">
         <div class="equip-img">
           <div class="ampliar">
             <p>&#43;</p>
@@ -510,7 +576,7 @@
         </div>
       </div><!-- #marc -->
 
-      <div id="remei" class="equip" onclick="openEquip4(); closeNav()">
+      <div id="remei" class="equip" onclick="openEquip4()">
         <div class="equip-img">
           <div class="ampliar">
             <p>&#43;</p>
@@ -521,7 +587,7 @@
         </div>
       </div><!-- #remei -->
 
-      <div id="pere" class="equip" onclick="openEquip5(); closeNav()">
+      <div id="pere" class="equip" onclick="openEquip5()">
         <div class="equip-img">
           <div class="ampliar">
             <p>&#43;</p>
@@ -648,7 +714,7 @@
   <!-- E. Section INFORMACIÓ ################-->
   <section id="info" class="seccio">
 
-    <div id="alfa" class="contingut titol-seccio">
+    <div class="contingut titol-seccio">
       <h3>Informació</h3>
     </div>
 
