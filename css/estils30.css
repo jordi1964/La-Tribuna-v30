@@ -2164,7 +2164,7 @@ h5.FAQs-h5 {
 }
 
 div#img-faqs-1 {
-  display: none;
+  grid-area: 2 / 1 / 3 / 3;
 }
 div#img-faqs-1 img{
   max-width: 100%;
