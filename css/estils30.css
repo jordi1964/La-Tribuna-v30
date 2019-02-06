@@ -2441,10 +2441,10 @@ div.plat-text {
   display: none;
   position: fixed;
   z-index: 1;
-  left: calc(50vw - 45vmin);
-  top: calc(50vh - 45vmin);
-  width: 90vmin;
-  height: 90vmin;
+  left: calc(50vw - 40vmin);
+  top: calc(50vh - 40vmin);
+  width: 80vmin;
+  max-height: 80vmin;
   overflow: auto;
   background-color: var(--grisclar);
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2), 0 0.75rem 1.25rem 0 rgba(0, 0, 0, 0.19);
@@ -2455,8 +2455,8 @@ div.plat-text {
   color: var(--verd);
   position: fixed;
   z-index: 2;
-  top: calc(60vh - 45vmin);
-  right: calc(51vw - 45vmin);
+  top: 18vh;
+  right: calc(51vw - 40vmin);
   font-size: 1.875rem; /* 30px */
   font-weight: bold;
   text-align: center;
@@ -2541,13 +2541,14 @@ div.pdf p i {
 @media only screen and (orientation: portrait) {
   div.plat-text {
     left: 5vw;
-    top: 5vh;
+    top: 10vh;
     width: 90vw;
-    height: 90vh;
+    max-height: 85vh;
   }
   .close-recep {
     top: 15vh;
 }
+
 
 /* &&&&& MQs 576px RECEPTA --> 1 SOLA COLUMNA */
 @media only screen and (max-width: 575.98px) {
