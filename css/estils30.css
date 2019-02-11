@@ -745,6 +745,7 @@ div.menu:hover img {
 
 
 /* SLIDESHOW */
+/* La freqüència de canvi de les imatges està en l'script que hi ha al final del doc HTML */
 .slideshow-container {
   max-width: 100%;
   height: 100vh;
@@ -1195,11 +1196,11 @@ div.ampliar {
 }
 div.ampliar p {
   color: var(--verd);
-  font-size: 30px!important;
+  font-size: 2rem!important;
   font-weight: 400;
   text-align: center;
   margin: 0;
-  padding: 3px 0 0 0;
+  padding-top: 0.2rem!important;
 }
 /* Animació */
 /* Safari 4.0 - 8.0 */
@@ -1295,6 +1296,21 @@ div.amplibis p {
   margin: 0;
   padding: 3px 0 0 0;
 }
+
+/* &&&&& MQs > 576px ANIMACIÓ AMPLIAR --> Acoto el tamany, perquè no es vegi massa gran en pantalles grans */
+@media only screen and (min-width: 576px) and (hover: hover) {
+  div.ampliar {
+    top: 1.1rem;
+    right: 1.1rem;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  div.ampliar p {
+    font-size: 1.4rem!important;
+    padding-top: 0!important;
+  }
+}
+
 
 /* &&&&& MQs 576px B. Section IOGA IYENGAR --> Passem text a una columna */
 @media only screen and (max-width: 575.98px) {
@@ -2084,6 +2100,7 @@ div#img-consells-5 {
 
 
 /** Material **/
+/* He suprimit l'apartat de MATERIAL (11/2/19), però conservo totes les classes associades, perquè s'usen tb en l'apartat de BIBLIOGRAFIA */
 
 div.grid-material {
   width: 100%;
@@ -2095,7 +2112,13 @@ div.grid-material {
 
 div.materials {
   background-color: var(--grisclar);
-  padding: 0 1rem 0.5rem 1rem;
+  padding: 0 1rem 1rem 1rem;
+  position: relative; /* Sinó botó "ampliar" no rutlla */
+}
+
+div.materials h5 {
+  text-align: left;
+  padding-right: 2rem;
 }
 
 div.material-descrip img {
@@ -2107,6 +2130,10 @@ div.material-descrip img {
 
 div.material-descrip p {
   margin-top: 0;
+}
+
+div.materials a {
+  text-decoration: none;
 }
 
 /* Eliminar border-bottom que fica .apartats-info */
